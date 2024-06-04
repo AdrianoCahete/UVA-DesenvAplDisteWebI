@@ -7,24 +7,51 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--
+        AVA1 de "Desenvolvimento de Aplicações Distribuídas e WEB I (IL10316)" da UVA.
+        por Adriano Cahete <https://github.com/AdrianoCahete>
+
+        Comentários e classes em inglês porque: padrão e costume.    
+        Commit history aqui: https://github.com/AdrianoCahete/UVA-DesenvAplDisteWebI
+
+        * Se você chegou aqui através do Google: não copie. Dá uma lida ai embaixo que facilita.
+        O HTML é uma tabela básica, o css foi feito depois da tabela montada, mas são mais padrões de usabilidade do que visual.
+        O que deve te pegar é o js.
+        
+        O que você tem que saber é: o html te dá o form e, por padrão, o botão quando submit dentro do form, faz um POST request.
+        Como não temos servidor, nosso "post" é pro navegador mesmo, então tem que prevenir o behaviour default (e.preventDefault()).
+        Depois é só criar o objeto que vai ler o nosso form (só pra facilitar a criação e leiturabilidade do código) e o objeto que vai ser a saida desse form.
+        Daí, só ler linha por linha do form data (forEach), atribuindo (push) um valor (value) pra cada chave (key), no objeto de saida.
+
+        As últimas duas linhas são debug e confirmação pro usuário, sequencialmente. O objeto de saida você vê no console.
+
+        O que dá pra fazer de melhoria:
+        - Adicionar required em mais campos
+        - Estilizar o input em si quando algo der errado
+        - Bloquear o botão enquanto os "requireds" não tiverem sido preenchidos
+        - Validar o dado no form antes de enviar
+        - Salvar o submit no localStorage
+        - Adicionar uma listagem (não é requisito da AV) vinda do localStorage        
+    -->
+
     <div class="container">
       <h1>Cadastro de Pessoa</h1>
       <form id="regForm">
         <table>
           <tr>
-            <td><label for="name">Nome:</label></td>
-            <td><input type="text" id="name" name="name" /></td>
+            <td><label for="name" class="required">Nome</label></td>
+            <td><input type="text" id="name" name="name" required /></td>
           </tr>
           <tr>
-            <td><label for="lastName">Sobrenome:</label></td>
+            <td><label for="lastName">Sobrenome</label></td>
             <td><input type="text" id="lastName" name="lastName" /></td>
           </tr>
           <tr>
-            <td><label for="birthday">Data de Nascimento:</label></td>
+            <td><label for="birthday">Data de Nascimento</label></td>
             <td><input type="date" id="birthday" name="birthday" /></td>
           </tr>
           <tr>
-            <td><label>Gênero:</label></td>
+            <td><label>Gênero</label></td>
             <td>
               <input type="radio" id="male" name="gender" value="male" />
               <label for="male">Masculino</label>
@@ -33,19 +60,21 @@
             </td>
           </tr>
           <tr>
-            <td><label for="email">Email:</label></td>
+            <td><label for="email">Email</label></td>
             <td><input type="email" id="email" name="email" /></td>
           </tr>
           <tr>
-            <td><label for="phone">Telefone:</label></td>
+            <td><label for="phone">Telefone</label></td>
             <td><input type="tel" id="phone" name="phone" /></td>
           </tr>
           <tr>
-            <td><label for="address">Endereço:</label></td>
-            <td><textarea id="address" name="address"></textarea></td>
+            <td><label for="address">Endereço</label></td>
+            <td>
+              <textarea id="address" name="address" maxlength="50"></textarea>
+            </td>
           </tr>
           <tr>
-            <td><label for="country">País:</label></td>
+            <td><label for="country">País</label></td>
             <td>
               <select id="country" name="country">
                 <option value="br">Brasil</option>
@@ -55,7 +84,7 @@
             </td>
           </tr>
           <tr>
-            <td><label for="languages">Idiomas:</label></td>
+            <td><label for="languages">Idiomas</label></td>
             <td>
               <select id="languages" name="languages" multiple>
                 <option value="pt">Português</option>
@@ -66,17 +95,19 @@
             </td>
           </tr>
           <tr>
-            <td><label>Hobbies:</label></td>
+            <td><label>Hobbies</label></td>
             <td>
               <input
                 type="checkbox"
-                id="hobbies"
+                id="sports"
                 name="hobbies"
                 value="sports"
               />
-              <label for="sports">Esportes</label>
+              <label for="sports" name="hobbies">Esportes</label>
+
               <input type="checkbox" id="music" name="hobbies" value="music" />
               <label for="music">Música</label>
+
               <input
                 type="checkbox"
                 id="reading"
@@ -87,15 +118,18 @@
             </td>
           </tr>
           <tr>
-            <td><label for="username">Nome de Usuário:</label></td>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td><label for="username">Nome de Usuário</label></td>
             <td><input type="text" id="username" name="username" /></td>
           </tr>
           <tr>
-            <td><label for="password">Senha:</label></td>
+            <td><label for="password">Senha</label></td>
             <td><input type="password" id="password" name="password" /></td>
           </tr>
           <tr>
-            <td><label for="confirmPassword">Confirme a Senha:</label></td>
+            <td><label for="confirmPassword">Confirme a Senha</label></td>
             <td>
               <input
                 type="password"
@@ -105,11 +139,11 @@
             </td>
           </tr>
           <tr>
-            <td><label for="site">Site:</label></td>
+            <td><label for="site">Site</label></td>
             <td><input type="url" id="site" name="site" /></td>
           </tr>
           <tr>
-            <td>
+            <td colspan="2">
               <button type="submit">Cadastrar</button>
             </td>
           </tr>
