@@ -7,14 +7,115 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section>
+    <div class="container">
       <h1>Cadastro de Pessoa</h1>
       <form id="regForm">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" />
-        <button type="submit">Cadastrar</button>
+        <table>
+          <tr>
+            <td><label for="name">Nome:</label></td>
+            <td><input type="text" id="name" name="name" /></td>
+          </tr>
+          <tr>
+            <td><label for="lastName">Sobrenome:</label></td>
+            <td><input type="text" id="lastName" name="lastName" /></td>
+          </tr>
+          <tr>
+            <td><label for="birthday">Data de Nascimento:</label></td>
+            <td><input type="date" id="birthday" name="birthday" /></td>
+          </tr>
+          <tr>
+            <td><label>Gênero:</label></td>
+            <td>
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Masculino</label>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Feminino</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="email" id="email" name="email" /></td>
+          </tr>
+          <tr>
+            <td><label for="phone">Telefone:</label></td>
+            <td><input type="tel" id="phone" name="phone" /></td>
+          </tr>
+          <tr>
+            <td><label for="address">Endereço:</label></td>
+            <td><textarea id="address" name="address"></textarea></td>
+          </tr>
+          <tr>
+            <td><label for="country">País:</label></td>
+            <td>
+              <select id="country" name="country">
+                <option value="br">Brasil</option>
+                <option value="us">Estados Unidos</option>
+                <option value="nl">Holanda</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="languages">Idiomas:</label></td>
+            <td>
+              <select id="languages" name="languages" multiple>
+                <option value="pt">Português</option>
+                <option value="en">Inglês</option>
+                <option value="es">Espanhol</option>
+                <option value="fr">Francês</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Hobbies:</label></td>
+            <td>
+              <input
+                type="checkbox"
+                id="hobbies"
+                name="hobbies"
+                value="sports"
+              />
+              <label for="sports">Esportes</label>
+              <input type="checkbox" id="music" name="hobbies" value="music" />
+              <label for="music">Música</label>
+              <input
+                type="checkbox"
+                id="reading"
+                name="hobbies"
+                value="reading"
+              />
+              <label for="reading">Leitura</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="username">Nome de Usuário:</label></td>
+            <td><input type="text" id="username" name="username" /></td>
+          </tr>
+          <tr>
+            <td><label for="password">Senha:</label></td>
+            <td><input type="password" id="password" name="password" /></td>
+          </tr>
+          <tr>
+            <td><label for="confirmPassword">Confirme a Senha:</label></td>
+            <td>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="site">Site:</label></td>
+            <td><input type="url" id="site" name="site" /></td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit">Cadastrar</button>
+            </td>
+          </tr>
+        </table>
       </form>
-    </section>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

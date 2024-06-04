@@ -1,5 +1,5 @@
 document.getElementById("regForm").addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent form submission for validation
+  event.preventDefault();
 
   let form = new FormData(event.target);
   let data = {};
