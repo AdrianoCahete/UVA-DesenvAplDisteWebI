@@ -1,7 +1,7 @@
-document.getElementById("regForm").addEventListener("submit", function (event) {
-  event.preventDefault();
+document.getElementById("regForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  let form = new FormData(event.target);
+  let form = new FormData(e.target);
   let data = {};
 
   form.forEach((value, key) => {
