@@ -14,14 +14,15 @@ body {
 button,
 input,
 textarea,
-select,
+select:not([multiple]),
 table {
     width: 100%;
     padding: 10px;
 }
 
-hr {
-    margin: 20px 0;
+select:is([multiple]) {
+    width: 100%;
+    padding: 5px;
 }
 
 input[type="checkbox"],
@@ -35,6 +36,11 @@ input {
     border-radius: 5px;
     margin-bottom: 5px;
     border: 1px solid #ccc;    
+}
+
+input:not([value]):invalid,
+input:not([value=""]):invalid {
+    border-color: red;
 }
 
 button {
