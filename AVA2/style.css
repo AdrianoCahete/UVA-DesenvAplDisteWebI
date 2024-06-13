@@ -80,5 +80,5 @@ button {
 }
 
 .required::after {
-    content: "*";
+    content: " *";
 }

@@ -29,11 +29,11 @@
               <!-- regex da propria spec da W3C: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address -->
           </tr>
           <tr>
-              <td><label for="birthDate">Data de Nascimento</label></td>
+              <td><label for="birthDate" class="required">Data de Nascimento</label></td>
               <td><input type="date" id="birthDate" name="birthDate" max="2024-06-04"></td>
           </tr>
           <tr>
-              <td><label>Sexo</label></td>
+              <td><label class="required">Sexo</label></td>
               <td>
                   <input type="radio" id="male" name="gender" value="male">
                   <label for="male">Masculino</label>
@@ -42,7 +42,7 @@
               </td>
           </tr>
           <tr>
-              <td><label for="maritalStatus">Estado Civil</label></td>
+              <td><label for="maritalStatus" class="required">Estado Civil</label></td>
               <td>
                   <select id="maritalStatus" name="maritalStatus">
                       <option value="single">Solteiro(a)</option>
